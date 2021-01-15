@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700;800;900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    /* margin: 0; */
+    /* padding: 0; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+}
+
+
+/* làm 1 cái hình nền xuất hiện nhỏ */
+
+.card {
+    position: relative;
+    width: 630px;
+    height: 450px;
+    border: solid #ffffff;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    /* border-radius: 20px; */
+    transition: 0.5s;
+    /* overflow: hidden; */
+}
+
+.card .circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.card .circle:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    clip-path: circle(120px at center);
+    transition: 0.5s;
+}
+
+.card:hover .circle:before {
+    background: #1b1f21;
+    clip-path: circle(450px at center);
+}
+
+
+/* cho cái ảnh chệch bên trái  */
+
+
+/* .card img {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translatey(-52%);
+    height: 300px;
+    pointer-events: none;
+    transition: 0.5s;
+} */
+
+
+/* cho cái lon ở giữa */
+
+.card img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 320px;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.card:hover img {
+    left: 72%;
+    height: 520px;
+}
+
+
+/* .pepsi {
+    display: block;
+    /* position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+margin: 15rem 0;
+display: flex;
+align-items: center;
+justify-content: center;
+
+}
+*/
+
+.card .content {
+    position: relative;
+    width: 50%;
+    right: 25%;
+    padding: 20px 20px 20px 40px;
+    /* padding-right: 150px;
+    padding-bottom: 70px; */
+    color: #ffffff;
+    transition: 0.5s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.card:hover .content {
+    right: 1;
+    opacity: 1;
+    visibility: visible;
+}
+
+.card .content h2 {
+    text-transform: uppercase;
+    font-size: 2em;
+    line-height: 1em;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.card .content a {
+    color: #0e0303;
+    text-decoration: none;
+    font-size: 20px;
+    position: relative;
+    padding: 10px 10px;
+    border-radius: 10px;
+    background: #fff;
+    margin: 0px 10px 0px 50px;
+    display: inline-block;
+    font-weight: 600;
+}
+
+
+/* Responsive */
+
+@media (max-width: 991px) {
+    .card {
+        width: auto;
+        max-width: 450px;
+        align-items: flex-start;
+    }
+    .card:hover {
+        height: 630px;
+    }
+    .card .content {
+        width: 100%;
+        left: 0;
+        padding: 30px;
+    }
+    .card:hover img {
+        top: 80%;
+        left: 50%;
+        height: 320px;
+    }
+    .card .content p {
+        text-align: center;
+    }
+    .card .content a {
+        margin-left: 127px;
+    }
+}
